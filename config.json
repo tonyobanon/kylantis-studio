@@ -1,0 +1,12 @@
+{
+  "destination": {
+    "js": "client/app-assets/js",
+    "css": "client/app-assets/css",
+    "css_rtl": "client/app-assets/css-rtl"
+  },
+  "source": {
+    "path": "client/src",
+    "js": "client/src/js",
+    "sass": "client/src/scss"
+  }
+}

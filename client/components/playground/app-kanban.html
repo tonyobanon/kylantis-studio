@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<head>
+
+    <!-- Remove this: as it will be part of the app-shell -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/app-assets/css/core/layouts/base.min.css">
+    <!-- Remove this: as it will be part of the app-shell -->
+
+    <!-- TODO: Add other vendor assets as needed-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.4/css/boxicons.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/perfect-scrollbar@1.4.0/css/perfect-scrollbar.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"> -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jkanban@1.0.1/dist/jkanban.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/app-assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/app-assets/css/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="/app-assets/css/colors.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/app-assets/css/pages/app-kanban.min.css">
+
+</head>
+
+<body>
+
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- Basic Kanban App -->
+                <div class="kanban-overlay"></div>
+                <section id="kanban-wrapper">
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary mb-1" id="add-kanban">
+                                <i class='bx bx-add-to-queue mr-50'></i> Add New Board
+                            </button>
+                            <div id="kanban-app"></div>
+                        </div>
+                    </div>
+
+                    <!-- User new mail right area -->
+                    <div class="kanban-sidebar">
+                        <div class="card shadow-none quill-wrapper">
+                            <div
+                                class="card-header d-flex justify-content-between align-items-center border-bottom px-2 py-1">
+                                <h3 class="card-title">UI Design</h3>
+                                <button type="button" class="close close-icon">
+                                    <i class="bx bx-x"></i>
+                                </button>
+                            </div>
+                            <!-- form start -->
+                            <form class="edit-kanban-item">
+                                <div class="card-content">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label>Card Title</label>
+                                            <input type="text" class="form-control edit-kanban-item-title"
+                                                placeholder="kanban Title">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Due Date</label>
+                                            <input type="text" class="form-control edit-kanban-item-date"
+                                                placeholder="21 August, 2019">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label>Label</label>
+                                                    <select class="form-control">
+                                                        <option class="bg-primary" selected>Primary</option>
+                                                        <option class="bg-danger">Danger</option>
+                                                        <option class="bg-success">Success</option>
+                                                        <option class="bg-info">Info</option>
+                                                        <option class="bg-warning">Warning</option>
+                                                        <option class="bg-secondary">Secondary</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label>Member</label>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="avatar m-0 mr-1">
+                                                            <img src="/app-assets/images/portrait/small/avatar-s-20.jpg"
+                                                                height="36" width="36" alt="avtar img holder">
+                                                        </div>
+                                                        <div class="badge-circle badge-circle-light-secondary">
+                                                            <i class="bx bx-plus"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Attachment</label>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="emailAttach">
+                                                <label class="custom-file-label" for="emailAttach">Attach file</label>
+                                            </div>
+                                        </div>
+                                        <!-- Compose mail Quill editor -->
+                                        <div class="form-group">
+                                            <label>Comment</label>
+                                            <div class="snow-container border rounded p-1">
+                                                <div class="compose-editor"></div>
+                                                <div class="d-flex justify-content-end">
+                                                    <div class="compose-quill-toolbar">
+                                                        <span class="ql-formats mr-0">
+                                                            <button class="ql-bold"></button>
+                                                            <button class="ql-italic"></button>
+                                                            <button class="ql-underline"></button>
+                                                            <button class="ql-link"></button>
+                                                            <button class="ql-image"></button>
+                                                            <button
+                                                                class="btn btn-sm btn-primary btn-comment ml-25">Comment</button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-end">
+                                    <button type="reset"
+                                        class="btn btn-light-danger delete-kanban-item d-flex align-items-center mr-1">
+                                        <i class='bx bx-trash mr-50'></i>
+                                        <span>Delete</span>
+                                    </button>
+                                    <button class="btn btn-primary glow update-kanban-item d-flex align-items-center">
+                                        <i class='bx bx-send mr-50'></i>
+                                        <span>Save</span>
+                                    </button>
+                                </div>
+                            </form>
+                            <!-- form start end-->
+                        </div>
+                    </div>
+                    <!--/ User Chat profile right area -->
+                </section>
+                <!--/ Sample Project kanban -->
+
+            </div>
+        </div>
+
+    <!-- TODO: Add other vendor assets as needed-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/perfect-scrollbar@1.4.0/dist/perfect-scrollbar.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/js/dist/util.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/js/dist/dropdown.min.js"></script>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jkanban@1.0.1/dist/jkanban.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pickadate@3.6.3/lib/compressed/picker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pickadate@3.6.3/lib/compressed/picker.date.min.js"></script>
+
+    <script src="/app-assets/js/scripts/pages/app-kanban.min.js"></script>
+
+</body>
+<!-- END: Body-->
+
+</html>
