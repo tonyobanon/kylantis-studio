@@ -22,7 +22,7 @@
   "dependencies": {
     "async": "^3.1.0",
     "gulp-w3c-html-validator": "^1.4.4",
-    "node-notifier": "^5.4.3",
+    "node-notifier": "^8.0.1",
     "through2": "^3.0.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.0",
