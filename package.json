@@ -53,7 +53,7 @@
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "merge-stream": "^2.0.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.6",
     "pug": "^2.0.4"
   },
   "devDependencies": {
