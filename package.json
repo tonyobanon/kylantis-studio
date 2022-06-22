@@ -20,7 +20,7 @@
     "test": "jest --runInBand --forceExit --coverage"
   },
   "dependencies": {
-    "async": "^3.1.0",
+    "async": "^3.2.2",
     "gulp-w3c-html-validator": "^1.4.4",
     "node-notifier": "^5.4.3",
     "through2": "^3.0.1",
